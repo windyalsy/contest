@@ -53,27 +53,34 @@ class Padding(object):
         
         
     def __padding_omit(self, df):
-        for i in range(df.shape[0] - 1):
+        i = 0
+        while i < (df.shape[0] - 1):
             diff = df.iloc[i+1]["timestamp"] - df.iloc[i]["timestamp"] / self.__interval
             if diff == 1:
                 continue
             elif diff <= 3:
                 ID = df.iloc[i]["KPI ID"]
+                insertRow = df.iloc[i]
                 value = (df.iloc[i]["value"] + df.iloc[i+1]["value"]) / diff
                 label = 0
                 if df.iloc[i]["label"] == 1 or df.iloc[i+1]["label"] == 1:
                     label = 1
-                for j in range(diff):
+                for j in xrange(diff):
                     timestamp = df.iloc[i]["timestamp"] + self.__interval
-                    insertRow = pd.DataFrame([[ID, timestamp, value, label]], 
+                    tmpRow = pd.DataFrame([[ID, timestamp, value, label]], 
                         columns=["KPI ID", "timestamp", "value", "label"])
-                    above = df.iloc[:i+1]
-                    below = df.iloc[i+1:]
-                    df = pd.concat([above, insertRow, below], ignore_index=True)
+                    if j == 0:
+                        insertRow = tmpRow
+                    else:
+                        insertRow = pd.concate([insertRow, tmpRow], ignore_index=True)
                     i += 1
+                above = df.iloc[:i+1]
+                below = df.iloc[i+1:]
+                df = pd.concat([above, insertRow, below], ignore_index=True)
             else:
                 ID = df.iloc[i]["KPI ID"]
-                for j in range(diff):
+                insertRow = df.iloc[i]
+                for j in xrange(diff):
                     timestamp = df.iloc[i]["timestamp"] + self.__interval
                     last_time = timestamp - self.__season
                     last_season = self.__find_last_season(i, last_time, df)
@@ -83,12 +90,16 @@ class Padding(object):
                     label = 0
                     if last_season["label"] == 1 or next_season["label"] == 1:
                         label = 1
-                    insertRow = pd.DataFrame([[ID, timestamp, value, label]], 
+                    tmpRow = pd.DataFrame([[ID, timestamp, value, label]], 
                         columns=["KPI ID", "timestamp", "value", "label"])
-                    above = df.iloc[:i+1]
-                    below = df.iloc[i+1:]
-                    df = pd.concat([above, insertRow, below], ignore_index=True)
+                    if j == 0:
+                        insertRow = tmpRow
+                    else:
+                        insertRow = pd.concat([insertRow, tmpRow], ignore_index=True)
                     i += 1
+                above = df.iloc[:i+1]
+                below = df.iloc[i+1:]
+                df = pd.concat([above, insertRow, below], ignore_index=True)
         return df
     
     def start_padding(self):
@@ -96,15 +107,23 @@ class Padding(object):
             read_path = os.path.join(self.__read_base_dir, filename)
             df = self.__read_from_file(read_path)
             print("read data from : %s" % read_path)
-            df = self.__padding_omit(df)
+            #print(df.iloc[0])
+            #print(df.shape[0])
+            #df = self.__padding_omit(df)
             print("padding finished.")
             write_path = os.path.join(self.__write_base_dir, filename)
-            self.__write_to_file(df, write_path)
+            #self.__write_to_file(df, write_path)
             print("write data to : %s" % write_path)
     
     
 if __name__ == "__main__":
     filename = np.array(["a40b1df87e3f1c87.csv", "cff6d3c01e6a6bfa.csv", "affb01ca2b4f0b45.csv", \
         "8bef9af9a922e0b3.csv", "71595dd7171f4540.csv", "7c189dd36f048a6c.csv"])
-    root_dir = os.path.dirname(os.getcwd())
-    print(root_dir)
+    root_dir = os.getcwd()
+    for i in range(3):
+        root_dir = os.path.abspath(os.path.dirname(root_dir))
+    read_dir = os.path.abspath(os.path.join(root_dir, "data", "train", "parts"))
+    write_dir = os.path.abspath(os.path.join(os.getcwd(), "data"))
+    padding = Padding(read_base_dir=read_dir, write_base_dir=write_dir, filename=filename)
+    padding.start_padding()
+
