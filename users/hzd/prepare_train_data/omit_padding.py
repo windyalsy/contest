@@ -18,7 +18,7 @@ class Padding(object):
     
     
     def __write_to_file(self, df, filename):
-        df.to_csv(filename)
+        df.to_csv(filename, index=False)
     
     
     def __find_last_season(self, index, last_time, df):
@@ -27,11 +27,11 @@ class Padding(object):
             next_time = last_time + 2 * self.__season
             return self.__find_next_season(index, next_time, df)
         else:
-            i = index - 1
-            while df.iloc[i]["timestamp"] != last_time and \
-                df.iloc[i]["timestamp"] > (last_time - self.__interval):
-                i += 1
-            return df.iloc[i]
+            # 前一周期的数据一定不会是缺失点
+            index_diff_num = self.__season // self.__interval
+            print("last_season_time: %i return_time: %i" % \
+                (last_time, df.iloc[index - index_diff_num + 1]["timestamp"]))
+            return df.iloc[index - index_diff_num + 1]
     
     
     def __find_next_season(self, index, next_time, df):
@@ -41,8 +41,7 @@ class Padding(object):
             return self.__find_last_season(index, last_time, df)
         else:
             i = index + 1
-            while df.iloc[i]["timestamp"] != next_time and \
-                df.iloc[i]["timestamp"] < (next_time + self.__interval):
+            while df.iloc[i]["timestamp"] < next_time :
                 i += 1
             if df.iloc[i]["timestamp"] == next_time:
                 return df.iloc[i]
@@ -55,32 +54,28 @@ class Padding(object):
     def __padding_omit(self, df):
         i = 0
         while i < (df.shape[0] - 1):
-            diff = df.iloc[i+1]["timestamp"] - df.iloc[i]["timestamp"] / self.__interval
-            if diff == 1:
+            print("iterations : %i" % i)
+            diff_num = (df.iloc[i+1]["timestamp"] - df.iloc[i]["timestamp"]) // self.__interval
+            if diff_num == 1:
+                i += 1
                 continue
-            elif diff <= 3:
+            elif diff_num <= 4:
                 ID = df.iloc[i]["KPI ID"]
-                insertRow = df.iloc[i]
-                value = (df.iloc[i]["value"] + df.iloc[i+1]["value"]) / diff
-                label = 0
-                if df.iloc[i]["label"] == 1 or df.iloc[i+1]["label"] == 1:
-                    label = 1
-                for j in xrange(diff):
+                for j in range(1, diff_num):
                     timestamp = df.iloc[i]["timestamp"] + self.__interval
-                    tmpRow = pd.DataFrame([[ID, timestamp, value, label]], 
+                    value = (df.iloc[i]["value"] + df.iloc[i+1]["value"]) / 2
+                    label = 0
+                    if df.iloc[i]["label"] == 1 or df.iloc[i+1]["label"] == 1:
+                        label = 1
+                    insertRow = pd.DataFrame([[ID, timestamp, value, label]], 
                         columns=["KPI ID", "timestamp", "value", "label"])
-                    if j == 0:
-                        insertRow = tmpRow
-                    else:
-                        insertRow = pd.concate([insertRow, tmpRow], ignore_index=True)
+                    above = df.iloc[:i+1]
+                    below = df.iloc[i+1:]
+                    df = pd.concat([above, insertRow, below], ignore_index=True)
                     i += 1
-                above = df.iloc[:i+1]
-                below = df.iloc[i+1:]
-                df = pd.concat([above, insertRow, below], ignore_index=True)
             else:
                 ID = df.iloc[i]["KPI ID"]
-                insertRow = df.iloc[i]
-                for j in xrange(diff):
+                for j in range(1, diff_num):
                     timestamp = df.iloc[i]["timestamp"] + self.__interval
                     last_time = timestamp - self.__season
                     last_season = self.__find_last_season(i, last_time, df)
@@ -90,16 +85,12 @@ class Padding(object):
                     label = 0
                     if last_season["label"] == 1 or next_season["label"] == 1:
                         label = 1
-                    tmpRow = pd.DataFrame([[ID, timestamp, value, label]], 
+                    insertRow = pd.DataFrame([[ID, timestamp, value, label]], 
                         columns=["KPI ID", "timestamp", "value", "label"])
-                    if j == 0:
-                        insertRow = tmpRow
-                    else:
-                        insertRow = pd.concat([insertRow, tmpRow], ignore_index=True)
+                    above = df.iloc[:i+1]
+                    below = df.iloc[i+1:]
+                    df = pd.concat([above, insertRow, below], ignore_index=True)
                     i += 1
-                above = df.iloc[:i+1]
-                below = df.iloc[i+1:]
-                df = pd.concat([above, insertRow, below], ignore_index=True)
         return df
     
     def start_padding(self):
@@ -107,12 +98,13 @@ class Padding(object):
             read_path = os.path.join(self.__read_base_dir, filename)
             df = self.__read_from_file(read_path)
             print("read data from : %s" % read_path)
-            #print(df.iloc[0])
-            #print(df.shape[0])
-            #df = self.__padding_omit(df)
+            print("*" * 66)
+            df = self.__padding_omit(df)
+            print("*" * 66)
             print("padding finished.")
             write_path = os.path.join(self.__write_base_dir, filename)
-            #self.__write_to_file(df, write_path)
+            self.__write_to_file(df, write_path)
+            print("*" * 66)
             print("write data to : %s" % write_path)
     
     
@@ -123,7 +115,7 @@ if __name__ == "__main__":
     for i in range(3):
         root_dir = os.path.abspath(os.path.dirname(root_dir))
     read_dir = os.path.abspath(os.path.join(root_dir, "data", "train", "parts"))
-    write_dir = os.path.abspath(os.path.join(os.getcwd(), "data"))
+    write_dir = os.path.abspath(os.path.join(root_dir, "data", "train", "parts_without_omits"))
     padding = Padding(read_base_dir=read_dir, write_base_dir=write_dir, filename=filename)
     padding.start_padding()
 
