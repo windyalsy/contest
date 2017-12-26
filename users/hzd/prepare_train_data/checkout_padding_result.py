@@ -44,4 +44,4 @@ if __name__ == "__main__":
     read_dir = os.path.abspath(os.path.join(root_dir, "data", "train", "parts_without_omits"))
     checkout = Checkout(read_base_dir=read_dir, filename=filename)
     checkout.checkout_omits()
-    
+
