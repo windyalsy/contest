@@ -14,12 +14,12 @@ class Merge(object):
 
     def merge(self, id_list,path):
         first_df=self.getDataframe(id_list[0],path)
-        count=1
+        count=0
         while(count<id_list.__len__()-1):
+            count += 1
             df=self.getDataframe(id_list[count],path)
             frames = [first_df, df]
             first_df = pd.concat(frames, ignore_index=True)
-            count+=1
         self.createFile("total_without_omits/train_without_omits.csv",first_df)
 
 
