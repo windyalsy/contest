@@ -53,7 +53,7 @@ class LstmRegression(object):
             # Unrolling in time steps
             self.__lstm_output, self.__final_state = tf.nn.dynamic_rnn(cell, self.__input, initial_state=self.__initial_state)
             # Add full connect layer to get prediction
-            self.__lstm_prediction = tf.contrib.layers.fully_connected(self.__final_state[1].h, self.__output_size, 
+            self.__lstm_prediction = tf.contrib.layers.fully_connected(self.__final_state[-1].h, self.__output_size, 
                 activation_fn=None)
     
     def __build_loss(self):
@@ -78,21 +78,23 @@ class LstmRegression(object):
         self.__build_loss()
         self.__build_optimizer()
         self.__saver = tf.train.Saver()
+        
+    def __generator(self, train_x, train_y):
+        for i in range(train_x.shape[0]):
+            yield train_x[i], train_y[i]
 
     def lstm_train(self, train_x, train_y, train_pass_num, save_path, log_every_n):
         self.__session = tf.Session()
         with self.__session as sess:
             sess.run(tf.global_variables_initializer())
             # Train network
-            new_state = sess.run(self.initial_state)
+            new_state = sess.run(self.__initial_state)
             last_saved_loss = 100000.0
             for pass_num in range(train_pass_num):
                 pass_total_loss = 0.0
-                step = 0
-                for i in range(len(train_x)):
-                    x = train_x[i]
-                    y = train_y[i]
-                    step += 1
+                batch_num = 0
+                for x, y in self.__generator(train_x, train_y):
+                    batch_num += 1
                     feed = {  self.__input: x,
                               self.__target: y,
                               self.__drop_out: self.__train_drop_out,
@@ -104,14 +106,15 @@ class LstmRegression(object):
                                                             self.__optimizer], feed_dict=feed)
                     pass_total_loss += batch_loss
                     # Log on console
-                    if step % log_every_n == 0:
-                        print("step: {}... ".format(step),
-                              "loss: {:.4f}... ".format(batch_loss))
+                    if batch_num % log_every_n == 0:
+                        print("epoch: {}".format(pass_num),
+                              "batch: {} ".format(batch_num),
+                              "loss: {:.4f}...".format(batch_loss))
                 # Save model
                 if pass_total_loss <= last_saved_loss:
                     last_saved_loss = pass_total_loss
                     self.__saver.save(sess, os.path.join(save_path, "lstm_model"))
-                    print("LSTM Model Saved.   total_loss: %f   train_pass: %d" % (last_saved_loss, pass_num))
+                    print("LSTM Model Saved.   total_loss: %f   train_epoch: %d" % (last_saved_loss, pass_num))
 
 
     def load_model(self, checkpoint):
@@ -119,17 +122,21 @@ class LstmRegression(object):
         self.__saver.restore(self.__session, checkpoint)
         print("Restored lstm model from: {}".format(checkpoint))
 
-    def lstm_single_predict(self, sample):
+    def lstm_predict(self, predict_x):
         sess = self.__session
         new_state = sess.run(self.__initial_state)
-        sample = np.reshape(sample, [1, self.lstm_time_step, self.__input_size])
-        feed = {  self.__input: sample,
-                  self.__drop_out: 1.,
-                  self.__initial_state: new_state 
-               }
-        predicts = sess.run([self.__lstm_prediction], feed_dict=feed)
-        result = np.reshape(predicts, (-1, self.__output_size))
+        result = np.zeros((predict_x.shape[0], self.__output_size), dtype=float)
+        predict_x = np.reshape(predict_x, (-1, self.__batch_size, self.__lstm_time_step, self.__input_size))
+        for i in range(predict_x.shape[0]):
+            sample = predict_x[i]
+            feed = {  self.__input: sample,
+                      self.__drop_out: 1.0,
+                      self.__initial_state: new_state 
+                   }
+            predicts = sess.run(self.__lstm_prediction, feed_dict=feed)
+            result[i] = predicts
+            print("predict pass: {}.".format(i+1))
         return result
-
+    
 
 
