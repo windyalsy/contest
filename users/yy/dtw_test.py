@@ -34,7 +34,7 @@ class UseDTW(object):
         time=df["timestamp"].min()
         time=(int(time/86400)+5)*86400
         df=df[df["timestamp"]>=time]
-        df=df.head(100)
+        df=df.head(1000)
 
 
         # df["value"]=df["value"]/max(df["value"].max(),abs(df["value"].min()))
@@ -85,7 +85,7 @@ class UseDTW(object):
                     y_set=s
             if (x_set!=y_set or (len(x_set)==0 and len(y_set)==0)) and x_key!=y_key:
                 print(y_key + "  " + x_key + ":" + str(dist) )
-                if dist < 0.03:
+                if dist < 0.04:
                     if len(x_set) != 0 and len(y_set) != 0:
                         x_set=x_set.union(y_set)
                         resList.remove(y_set)
