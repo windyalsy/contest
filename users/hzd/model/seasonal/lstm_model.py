@@ -3,6 +3,8 @@
 
 import tensorflow as tf
 import numpy as np
+import sys
+import logging 
 
 class LstmRegression(object):
     def __init__(self,
@@ -25,8 +27,16 @@ class LstmRegression(object):
         self.__gradient_clipping = gradient_clipping
         self.__train_drop_out = train_drop_out
         self.__build_lstm_network()
-
-
+        # Logger configuration
+        self.__logger = logging.getLogger("LSTM Logger")
+        self.__logger.setLevel(logging.INFO)
+        sh = logging.StreamHandler(sys.stdout)
+        fmt = "%(asctime)s %(name)s %(levelname)s %(message)s"
+        datefmt = "%Y-%m-%d %H:%M:%S"
+        formatter = logging.Formatter(fmt, datefmt)
+        sh.setFormatter(formatter)
+        self.__logger.addHandler(sh)
+        
     def __build_inputs(self):
         with tf.name_scope("inputs"):
             self.__input = tf.placeholder(tf.float32, shape=(
@@ -89,7 +99,7 @@ class LstmRegression(object):
             sess.run(tf.global_variables_initializer())
             # Train network
             new_state = sess.run(self.__initial_state)
-            last_saved_loss = 100000.0
+            self.__last_saved_loss = 100000.0
             for pass_num in range(train_pass_num):
                 pass_total_loss = 0.0
                 batch_num = 0
@@ -107,20 +117,20 @@ class LstmRegression(object):
                     pass_total_loss += batch_loss
                     # Log on console
                     if batch_num % log_every_n == 0:
-                        print("epoch: {}".format(pass_num),
-                              "batch: {} ".format(batch_num),
-                              "loss: {:.4f}...".format(batch_loss))
+                        self.__logger.info("Training Info  epoch: {}  batch: {}  loss: {:.4f}..."
+                                               .format(pass_num, batch_num, batch_loss))
                 # Save model
-                if pass_total_loss <= last_saved_loss:
-                    last_saved_loss = pass_total_loss
-                    self.__saver.save(sess, os.path.join(save_path, "lstm_model"))
-                    print("LSTM Model Saved.   total_loss: %f   train_epoch: %d" % (last_saved_loss, pass_num))
+                if pass_total_loss <= self.__last_saved_loss:
+                    self.__last_saved_loss = pass_total_loss
+                    self.__saver.save(sess, save_path)
+                    self.__logger.info("LSTM model saved.  total_loss: {:.4f}  train_epoch: {}"
+                                           .format(self.__last_saved_loss, pass_num))
 
 
     def load_model(self, checkpoint):
         self.__session = tf.Session()
         self.__saver.restore(self.__session, checkpoint)
-        print("Restored lstm model from: {}".format(checkpoint))
+        self.__logger.info("Reload lstm model from: {}".format(checkpoint))
 
     def lstm_predict(self, predict_x):
         sess = self.__session
@@ -135,8 +145,10 @@ class LstmRegression(object):
                    }
             predicts = sess.run(self.__lstm_prediction, feed_dict=feed)
             result[i] = predicts
-            print("predict pass: {}.".format(i+1))
+            self.__logger.info("Predict pass: {}.".format(i+1))
         return result
     
-
+    #  Use saved cost as grid search estimator
+    def get_saved_cost(self):
+        return self.__last_saved_loss
 
