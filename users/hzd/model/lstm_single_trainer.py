@@ -5,6 +5,7 @@ import numpy as np
 import pandas as pd
 import tensorflow as tf
 import os
+from seasonal.lstm_model import LstmRegression
 
 def read_from_file(filepath):
     df = pd.read_csv(filepath)
@@ -82,15 +83,16 @@ def main():
     lstm_time_step = 15
     gradient_clipping = 5
     train_drop_out = 0.5
-    train_set_num = 10000
-    train_pass_num = 2
+    train_set_num = 100000
+    train_pass_num = 2000
     
     """
         Read Data From File
     """
     current_path = os.getcwd()
     filepath = os.path.join(current_path, "8bef9af9a922e0b3.csv")
-    model_path = os.path.join(current_path, "lstm-model")
+    model_path = os.path.join(current_path, "lstm-model", "8bef9af9a922e0b3")
+    load_path = os.path.join(current_path, "lstm-model")
     raw_data, normalize = read_from_file(filepath)
     mean = np.mean(raw_data)
     std = np.std(raw_data)
@@ -117,7 +119,7 @@ def main():
     """
         LSTM Train
     """
-    #lstm.lstm_train(train_x, train_y, train_pass_num, model_path, 1)
+    lstm.lstm_train(train_x, train_y, train_pass_num, model_path, 1)
     
     """
         Initialize LSTM Predict Graph
@@ -134,7 +136,8 @@ def main():
     """
         Evaluate LSTM Model
     """
-    lstm_checkpoint = tf.train.latest_checkpoint(model_path)
+    lstm_checkpoint = tf.train.latest_checkpoint(load_path)
+    print(lstm_checkpoint)
     lstm_predict.load_model(lstm_checkpoint)
     validate_x, validate_y = prepare_predict_data(normalize=normalize,
                                                   raw_data=raw_data,
@@ -147,3 +150,4 @@ def main():
     
 if __name__ == "__main__":
     main()
+    
