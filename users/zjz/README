@@ -9,4 +9,4 @@
 ### Assignment 3
 1.Team_model 按照约定接口实现各模型特征：DIFF、MA、EWMA
 2.Team_model 按照约定接口实现随机森林的train，test，run
-3，getFeatures中建议修改各模型返回特征Dataframe的整合contact
+3.getFeatures中建议修改各模型返回特征Dataframe的拼接为contact
