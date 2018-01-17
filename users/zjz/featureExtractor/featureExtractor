@@ -1,0 +1,226 @@
+import pandas as pd
+import numpy as np
+import os
+
+FEATURENUM = 18
+COULUMS = ['win10MA','win20MA','win30MA','win40MA','win50MA',
+           'win10MADiff','win20MADiff','win30MADiff','win40MADiff','win50MADiff',
+           'alpha01EWMA','alpha03EWMA','alpha05EWMA','alpha07EWMA','alpha09EWMA',
+           'lastSlotDiff','lastDayDiff','lastWeekDiff']
+WIN10MA = 0
+WIN20MA = 1
+WIN30MA = 2
+WIN40MA = 3
+WIN50MA = 4
+
+WIN10MADIFF = 5
+WIN20MADIFF = 6
+WIN30MADIFF = 7
+WIN40MADIFF = 8
+WIN50MADIFF = 9
+
+AlPHA01EWMA = 10
+AlPHA03EWMA = 11
+AlPHA05EWMA = 12
+AlPHA07EWMA = 13
+AlPHA09EWMA = 14
+
+class Extractor(object):
+    def __init__(self,input,output):
+        self.__input = input
+        self.__output = output
+        self.__df = self.read()
+        self.__interval = self.__df.iloc[1]['timestamp']-self.__df.iloc[0]['timestamp']
+        self.__value = self.__df['value']
+        self.__feature = np.zeros(shape=(len(self.__value.index),FEATURENUM))
+        self.__extra = None
+
+    def read(self):
+        df = pd.read_csv(self.__input)
+        return df
+
+    ''' Params  id
+        id      :   int
+                    id for rows
+        Returns [lastSlotDiff,lastDayDiff,lastWeekDiff]
+
+        return difference between current value and the value at the last slot, last day, as well as last week
+        '''
+    def diff(self,id):
+        lastSlot = id - 1
+        lastDay = id - int(24 * 60 * 60 / self.__interval)
+        lastWeek =id - int(7 * 24 * 60 * 60 / self.__interval)
+
+        if lastSlot > -1:
+            lastSlotDiff = self.__value.iloc[lastSlot] - self.__value[id]
+        else:
+            # lastSlotDiff = np.NAN
+            lastSlotDiff = 0
+
+        if lastDay > -1:
+            lastDayDiff = self.__value.iloc[lastDay] - self.__value[id]
+        else:
+            # lastDayDiff = np.NAN
+            lastDayDiff = 0
+
+        if lastWeek > -1:
+            lastWeekDiff = self.__value.iloc[lastWeek] - self.__value[id]
+        else:
+            # lastWeekDiff = np.NAN
+            lastWeekDiff = 0
+
+        return[lastSlotDiff,lastDayDiff,lastWeekDiff]
+
+    ''' Params  id
+        id      :   int
+                    id for rows
+        Returns [win10MA,win20MA,win30MA,win40MA,win50MA,win10MADiff,win20MADiff,win30MADiff,win40MADiff,win50MADiff]
+
+        return MA, MA diff,with different window.
+        '''
+    def MA(self,id):
+        win10Start = id - 10
+        win20Start = id - 20
+        win30Start = id - 30
+        win40Start = id - 40
+        win50Start = id - 50
+
+        win10MA = 0
+        win20MA = 0
+        win30MA = 0
+        win40MA = 0
+        win50MA = 0
+
+        win10MADiff = 0
+        win20MADiff = 0
+        win30MADiff = 0
+        win40MADiff = 0
+        win50MADiff = 0
+
+        if id == 0:
+            win10MA = self.__value[id]
+            win20MA = self.__value[id]
+            win30MA = self.__value[id]
+            win40MA = self.__value[id]
+            win50MA = self.__value[id]
+            return[win10MA,win20MA,win30MA,win40MA,win50MA,win10MADiff,win20MADiff,win30MADiff,win40MADiff,win50MADiff]
+
+        if win10Start > 0:
+            win10MA = self.__feature[id-1,WIN10MA]  + (self.__value[id - 1] -  self.__value[win10Start -1]) / 10.0
+        else:
+            for i in range(0,id):
+                win10MA += self.__value[i]
+            win10MA /= float(id)
+
+        if win20Start > 0:
+            win20MA = self.__feature[id-1,WIN20MA] + (self.__value[id - 1] -  self.__value[win20Start -1]) / 20.0
+        else:
+            for i in range(0,id):
+                win20MA += self.__value[i]
+            win20MA /= float(id)
+
+        if win30Start > 0:
+            win30MA = self.__feature[id-1,WIN30MA] + (self.__value[id - 1] -  self.__value[win30Start -1]) / 30.0
+        else:
+            for i in range(0,id):
+                win30MA += self.__value[i]
+            win30MA /= float(id)
+
+        if win40Start > 0:
+            win40MA = self.__feature[id-1,WIN40MA]  + (self.__value[id - 1] -  self.__value[win40Start -1]) / 40.0
+        else:
+            for i in range(0,id):
+                win40MA += self.__value[i]
+            win40MA /= float(id)
+
+        if win50Start > 0:
+            win50MA = self.__feature[id-1,WIN50MA] + (self.__value[id - 1] -  self.__value[win50Start -1]) / 50.0
+        else:
+            for i in range(0,id):
+                win50MA += self.__value[i]
+            win50MA /= float(id)
+
+        win10MADiff = self.__value[id] - win10MA
+        win20MADiff = self.__value[id] - win20MA
+        win30MADiff = self.__value[id] - win30MA
+        win40MADiff = self.__value[id] - win40MA
+        win50MADiff = self.__value[id] - win50MA
+
+        return[win10MA,win20MA,win30MA,win40MA,win50MA,win10MADiff,win20MADiff,win30MADiff,win40MADiff,win50MADiff]
+
+
+
+    ''' Params  id
+        id      :   int
+                    id for rows
+        Returns [alpha01EWMA,alpha03EWMA,alpha05EWMA,alpha07EWMA,alpha09EWMA]
+
+        return EWMA with different alpha 0.1,0.3,0.5,0.7,0.9.
+        '''
+    def EWMA(self,id):
+
+        alpha01EWMA = 0
+        alpha03EWMA = 0
+        alpha05EWMA = 0
+        alpha07EWMA = 0
+        alpha09EWMA = 0
+
+
+        if id == 0:
+            alpha01EWMA = self.__value[id]
+            alpha03EWMA = self.__value[id]
+            alpha05EWMA = self.__value[id]
+            alpha07EWMA = self.__value[id]
+            alpha09EWMA = self.__value[id]
+
+        if id == 1:
+            alpha01EWMA = self.__value[id-1]
+            alpha03EWMA = self.__value[id-1]
+            alpha05EWMA = self.__value[id-1]
+            alpha07EWMA = self.__value[id-1]
+            alpha09EWMA = self.__value[id-1]
+
+        if id > 1:
+            alpha01EWMA = self.__value[id-1] * 0.1 + self.__feature[id-1,AlPHA01EWMA] * 0.9
+            alpha03EWMA = self.__value[id-1] * 0.3 + self.__feature[id-1,AlPHA03EWMA] * 0.7
+            alpha05EWMA = self.__value[id-1] * 0.5 + self.__feature[id-1,AlPHA05EWMA] * 0.5
+            alpha07EWMA = self.__value[id-1] * 0.7 + self.__feature[id-1,AlPHA07EWMA] * 0.3
+            alpha09EWMA = self.__value[id-1] * 0.9 + self.__feature[id-1,AlPHA09EWMA] * 0.1
+
+        return[alpha01EWMA,alpha03EWMA,alpha05EWMA,alpha07EWMA,alpha09EWMA]
+
+
+    def extract(self):
+        for id in self.__value.index:
+            self.__feature[id] = np.concatenate((self.MA(id),self.EWMA(id),self.diff(id)),axis=0)
+
+        self.__extra = pd.DataFrame(data=self.__feature,columns=COULUMS)
+        self.__extra.to_csv(self.__output,index=False,columns=None)
+
+
+
+# Clip dirty data in the head
+class Clip(object):
+    def __init__(self, path, timestamp=1496289600):
+        self.__timestamp = timestamp
+        self.__path = path
+
+    def clip(self):
+        list = os.listdir(self.__path)
+        for file in list:
+            df = pd.read_csv(self.__path+'/'+file)
+            df = df[df['timestamp'] > self.__timestamp]
+            df.to_csv(self.__path+'_clip/'+df.iloc[0] ['KPI ID']+'.csv', index=False,columns=None)
+
+if __name__ == "__main__":
+    inputPath = '../train_clip_padding/'
+    outputPath = '../train_feature/'
+    if not os.path.exists(outputPath):
+        os.makedirs(outputPath)
+
+    list = os.listdir(inputPath)
+    for file in list:
+        print("start extracting:    " +inputPath+file)
+        extrator = Extractor(inputPath+file,outputPath+file)
+        extrator.extract()
+        print("finished !   "+outputPath+file)
