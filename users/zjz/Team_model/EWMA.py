@@ -87,6 +87,7 @@ class EWMA(object):
         return self.__extra
 
 
+
 if __name__ == "__main__":
     inputPath = '../train_clip_padding/'
     outputPath = '../train_feature/'
