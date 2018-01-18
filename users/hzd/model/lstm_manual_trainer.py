@@ -9,7 +9,7 @@ from seasonal.lstm_model import LstmRegression
 
 def read_from_file(filepath):
     df = pd.read_csv(filepath)
-    raw_data = np.array(df["value"])
+    raw_data = df["value"].values
     normalize = (raw_data - np.mean(raw_data)) / np.std(raw_data)
     return raw_data, normalize
 
@@ -20,6 +20,21 @@ def prepare_train_data(normalize,
                        time_step, 
                        input_size, 
                        output_size):
+    """
+        Prepare train data for LSTM model input.
+        LSTM model requires the input X(feature) has the shape of [num_of_batch, batch_size, time_step, input_size]
+        and requires the input Y(label) has the shape of [num_of_batch, batch_size, output_size]
+        
+        Details:
+            Suppose the time series and lstm params are as follows:
+                time series: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
+                batch_size: 3
+                time_step: 2
+                input_size: 1
+                output_size: 1
+            input_x = [[[[1], [2]], [[2], [3]], [3, 4]], [[[4], [5]], [[5], [6]], [[6], [7]]], [[[7], [8]], [[8], [9]], [[9], [10]]]]
+            label_y = [[[3], [4], [5]], [[6], [7], [8]], [[9], [10], [11]]]
+    """
     normalize = np.reshape(normalize, (-1, input_size))
     x_shape = (train_set_num, time_step, input_size)
     y_shape = (train_set_num, output_size)
@@ -30,12 +45,12 @@ def prepare_train_data(normalize,
         train_x[i, 0:, 0:] = normalize[i: i+time_step, 0:]
         train_y[i, 0:] = normalize[i+time_step, 0:]
     # Shuffle train data
-    train_x = np.reshape(train_x, (-1, time_step))
+    train_x = np.reshape(train_x, (-1, time_step*input_size))
     train_y = np.reshape(train_y, (-1, output_size))
     shuffle_data = np.hstack((train_x, train_y))
     np.random.shuffle(shuffle_data)
-    train_x = shuffle_data[0:, 0: time_step]
-    train_y = shuffle_data[0:, time_step:]
+    train_x = shuffle_data[0:, 0: time_step*input_size]
+    train_y = shuffle_data[0:, time_step*input_size:]
     train_x = np.reshape(train_x, (-1, batch_size, time_step, input_size))
     train_y = np.reshape(train_y, (-1, batch_size, output_size))
     return train_x, train_y
@@ -144,8 +159,8 @@ def main():
                                                   time_step=lstm_time_step, 
                                                   input_size=input_size, 
                                                   output_size=output_size)
-    predict_result = lstm_predict.lstm_predict(validate_x[:1000])
-    evaluate_model(predict_result, validate_y[:1000], mean, std, 0.10)
+    predict_result = lstm_predict.lstm_predict(validate_x)
+    evaluate_model(predict_result, validate_y, mean, std, 0.10)
     
     
 if __name__ == "__main__":

@@ -36,6 +36,8 @@ class LstmRegression(object):
         formatter = logging.Formatter(fmt, datefmt)
         sh.setFormatter(formatter)
         self.__logger.addHandler(sh)
+        # Forbid logger propagate to upper console logger
+        self.__logger.propagate = False
         
     def __build_inputs(self):
         with tf.name_scope("inputs"):

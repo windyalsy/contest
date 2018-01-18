@@ -32,6 +32,8 @@ class LstmGridSearch(object):
         formatter = logging.Formatter(fmt, datefmt)
         sh.setFormatter(formatter)
         self.__logger.addHandler(sh)
+        # Forbid logger propagate to upper console logger
+        self.__logger.propagate = False
     
     def __prepare_train_data(self,
                              train_set_num, 
@@ -49,11 +51,11 @@ class LstmGridSearch(object):
             train_x[i, 0:, 0:] = normalize[i: i+time_step, 0:]
             train_y[i, 0:] = normalize[i+time_step, 0:]
         # Shuffle train data
-        train_x = np.reshape(train_x, (-1, time_step))
+        train_x = np.reshape(train_x, (-1, time_step*input_size))
         train_y = np.reshape(train_y, (-1, output_size))
         shuffle_data = np.hstack((train_x, train_y))
         np.random.shuffle(shuffle_data)
-        train_x = shuffle_data[0:, 0: time_step]
+        train_x = shuffle_data[0:, 0: time_step*input_size]
         train_y = shuffle_data[0:, time_step:]
         train_x = np.reshape(train_x, (-1, batch_size, time_step, input_size))
         train_y = np.reshape(train_y, (-1, batch_size, output_size))
