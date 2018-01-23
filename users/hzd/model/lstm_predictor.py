@@ -95,7 +95,11 @@ class LstmPredictor(object):
         self.__lstm.load_model(lstm_checkpoint)
         predict_val = self.__lstm.lstm_predict(self.__predict_x)
         diff = self.__get_predict_diff(self.__real_val, predict_val)
+        KPI_ID = self.__df["KPI ID"].values[self.__lstm_time_step:]
+        timestamp = self.__df["timestamp"].values[self.__lstm_time_step:]
         dict = {
+                "KPI ID": KPI_ID,
+                "timestamp": timestamp,
                 "lstm_feature": diff
                }
         fea_df = pd.DataFrame(dict)
