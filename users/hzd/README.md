@@ -20,5 +20,14 @@
     * `lstm_time_step`： 每个LSTM单元按时间展开的深度（即使用前`lstm_time_step`个时间步的数据预测下一个时间步的数据）  
     * `gradient_clipping`：梯度削减阈值（梯度大于该阈值时进行削减，用于防止梯度爆炸）  
     * `train_drop_out`: 丢弃率，即网络中前一层每个单元有`drop out`的概率不传输到下一层（增加网络数量，用于增强网络泛化能力）
-* `model`目录下存放有两个trainer的用例，其中`lstm_single_trainer.py`直接使用lstm_model做训练，用于手工调参；`lstm_grid_trainer.py`使用lstm_grid_search网格搜索最优参数，并将最优参数存入json文件。<br>
+* `model`目录下存放有两个trainer的用例，其中`lstm_manual_trainer.py`直接使用lstm_model做训练，用于手工调参；`lstm_grid_trainer.py`使用lstm_grid_search网格搜索最优参数，并将最优参数存入json文件。<br>
 **注意： 代码中涉及的目录名和文件路径在运行前需做更改**
+
+-------------------------------------------------
+
+### 三、LSTM特征提取
+* `model` 目录下的`lstm_predictor.py`中封装了对LSTM的特征提取功能。使用方法如下：<br>  
+    * 初始化LstmPredictor对象，传入参数为df: 待处理的数据， model_path： 与df对应的LSTM模型存储路径（只精确到最后一层的目录名），param_path： 与df对应的LSTM模型超参数文件路径（需要精确到文件名，例如.../.../param_file.json）  
+    * 调用`get_feature`方法。 该方法会返回一个pandas.DataFrame，列名为**lstm_feature**， 内容为每个timestamp的真实值与预测值之差的绝对值<br>
+
+**注意： 由于前time_step个数据无法做预测，因此返回的feature长度是小于原数据长度的**
