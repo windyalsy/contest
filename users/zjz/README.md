@@ -10,3 +10,7 @@
 1.Team_model 按照约定接口实现各模型特征：DIFF、MA、EWMA
 2.Team_model 按照约定接口实现随机森林的train，test，run
 3.getFeatures中建议修改各模型返回特征Dataframe的拼接为contact
+
+### Assignment 4
+1.Team_model 改名model，增加文件夹data
+2.model下增加离线特征提取offline_get_features、离线rf模型offline_rf
