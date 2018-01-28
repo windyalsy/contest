@@ -1,5 +1,5 @@
-from culiarity.test_na import TestNAs
-from culiarity.stl_test import UseSTL
+from users.hp.culiarity.test_na import TestNAs
+from users.hp.culiarity.stl_test import UseSTL
 import pandas as pd
 
 if __name__ == "__main__":
@@ -22,8 +22,9 @@ if __name__ == "__main__":
     df.insert(0, "KPI ID", "8bef9af9a922e0b3")
     df.insert(5, "predict", 0)
     count = 0
+    alltime = list(df["timestamp"].values)
     for i in range(length):
-        if str(df["timestamp"][i]) in anmostime:
+        if alltime[i] in anmostime:
             df.set_value(i, "predict", 1)
             count += 1
         else:
@@ -31,4 +32,5 @@ if __name__ == "__main__":
     df["timestamp"] = df3["timestamp"]
     df.to_csv("stl_result/" + filename + ".csv", index=False)
 
+    print(count)
     print("complete")
