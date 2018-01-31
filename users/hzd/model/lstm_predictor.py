@@ -95,8 +95,12 @@ class LstmPredictor(object):
         self.__lstm.load_model(lstm_checkpoint)
         predict_val = self.__lstm.lstm_predict(self.__predict_x)
         diff = self.__get_predict_diff(self.__real_val, predict_val)
-        KPI_ID = self.__df["KPI ID"].values[self.__lstm_time_step:]
-        timestamp = self.__df["timestamp"].values[self.__lstm_time_step:]
+        # Pendding Nan for the first time_step values
+        nan = np.empty(self.__lstm_time_step)
+        diff = np.concatenate((nan, diff), axis=0)
+        KPI_ID = self.__df["KPI ID"].values
+        timestamp = self.__df["timestamp"].values
+        assert diff.shape[0] == timestamp.shape[0], "Error, the length of diff is not equal with timestamp."
         dict = {
                 "KPI ID": KPI_ID,
                 "timestamp": timestamp,

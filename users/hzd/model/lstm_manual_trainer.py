@@ -98,7 +98,6 @@ def main():
     lstm_time_step = 15
     gradient_clipping = 5
     train_drop_out = 0.5
-    train_set_num = 100000
     train_pass_num = 2000
     
     """
@@ -111,6 +110,9 @@ def main():
     raw_data, normalize = read_from_file(filepath)
     mean = np.mean(raw_data)
     std = np.std(raw_data)
+    # Ensure train_x can be partition into shape [num_of_batch, batch_size, time_step, input_size]
+    train_set_num = normalize.shape[0] - lstm_time_step
+    train_set_num = train_set_num - (train_set_num % (batch_size * lstm_time_step * input_size))
     train_x, train_y = prepare_train_data(normalize=normalize, 
                                           train_set_num=train_set_num, 
                                           batch_size=batch_size, 
