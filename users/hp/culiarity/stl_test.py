@@ -18,8 +18,8 @@ class UseSTL(object):
         list = os.listdir(path)
         return list
 
-    def runSTL(self, path,id):
-         df = self.getDataframe(path,id)
+    def runSTL(self, df):
+         #df = self.getDataframe(path,id)
          res = self.stl(df, 11,np=1440)
          plot(res["trend"])
          show()

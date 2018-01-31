@@ -8,10 +8,11 @@ import numpy as np
 
 
 class TestNAs(TestCase):
-    def setUp(self):
+    def setUp(self,path,id):
         self.path = os.path.dirname(os.path.realpath(__file__))
+        #self.raw_data = origindf
         self.raw_data = pd.read_csv(os.path.join(self.path,
-                                                 '../../../data/train/parts_without_omits/8bef9af9a922e0b3.csv'),
+                                                 path+id),
                                     usecols=['timestamp', 'value'])
 
 
