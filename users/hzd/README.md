@@ -35,6 +35,14 @@
 -----------------------------------------------------
 
 ### Assignment IV. 对多条同类别（根据dtw分类）曲线的LSTM模型训练实验
-##### 选取/data/train/variety/new_train_variety中的第一类（第一行）作为实验对象。由于计算能力有限，只选择前4条KPI用于实验，使用其中的3条KPI作为训练集训练LSTM模型，剩下的1条KPI作为验证集检验预测效果
+选取/data/train/variety/new_train_variety中的第一类（第一行）作为实验对象。由于计算能力有限，只选择前4条KPI用于实验，使用其中的3条KPI作为训练集训练LSTM模型，剩下的1条KPI作为验证集检验预测效果<br>
+实验详情：<br>
+   训练集：**8bef9af9a922e0b3， a40b1df87e3f1c87， affb01ca2b4f0b45** 验证集：**cff6d3c01e6a6bfa**<br>
+   训练集处理：简单地将3条曲线首尾相接组成1维的大向量，然后对该向量做归一化处理(array-mean) / std<br>
+   模型参数：与之前单条曲线相同（当前lstm_manual_trainer.py中的默认参数）<br>
+   训练轮数（epoch）：35<br>
+   容错阈值：10%<br>
+   准确率：91.6503%
+   
 
 
