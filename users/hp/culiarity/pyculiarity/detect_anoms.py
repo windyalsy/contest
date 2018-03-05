@@ -1,7 +1,7 @@
-from culiarity.pyculiarity.date_utils import format_timestamp
+from users.hp.culiarity.pyculiarity.date_utils import format_timestamp
 from itertools import groupby
 from math import trunc, sqrt
-from culiarity.pyculiarity.r_stl import stl
+from users.hp.culiarity.pyculiarity.r_stl import stl
 from scipy.stats import t as student_t
 from statsmodels.robust.scale import mad
 import numpy as np

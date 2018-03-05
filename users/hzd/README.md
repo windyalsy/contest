@@ -1,6 +1,6 @@
 # READ ME
 -----------------------------
-### 一、数据预处理
+### Assignment I. 数据预处理
 * `prepare_train_data` 目录下的内容为数据预处理程序， 本人所负责的预处理数据：KPI ID = `a40b1df87e3f1c87.csv` `cff6d3c01e6a6bfa.csv` 
 `affb01ca2b4f0b45.csv` `8bef9af9a922e0b3.csv` `71595dd7171f4540.csv` `7c189dd36f048a6c.csv`
 * **omit_padding.py** 负责填补缺省值， 处理规则如下：<br>
@@ -9,7 +9,7 @@
     * 填补后的数据存放于`contest/train/data/parts_without_omits/KPI ID.csv`
 * **checkout_padding_result.py** 负责校验填补后数据的正确性
 -------------------------------------
-### 二、周期型KPI异常检测模型
+### Assignment II. 周期型KPI异常检测模型
 * `model/seasonal`目录下存放有lstm回归模型和自己实现的较为笨拙的grid search超参数调参方法。 `lstm_model.py`为栈式LSTM回归模型，基于tensorflow搭建，下面对超参数做简要解释：<br>
     * `input_size`： 网络输入层的大小（即输入维度）  
     * `output_size`： 网络输出层的大小（即输出维度）  
@@ -25,9 +25,34 @@
 
 -------------------------------------------------
 
-### 三、LSTM特征提取
+### Assignment III. LSTM特征提取
 * `model` 目录下的`lstm_predictor.py`中封装了对LSTM的特征提取功能。使用方法如下：<br>  
     * 初始化LstmPredictor对象，传入参数为df: 待处理的数据， model_path： 与df对应的LSTM模型存储路径（只精确到最后一层的目录名），param_path： 与df对应的LSTM模型超参数文件路径（需要精确到文件名，例如.../.../param_file.json）  
-    * 调用`get_feature`方法。 该方法会返回一个pandas.DataFrame，列名为**lstm_feature**， 内容为每个timestamp的真实值与预测值之差的绝对值<br>
+    * 调用`get_feature`方法。 该方法会返回一个pandas.DataFrame，列名依次为**KPI ID**、**timestamp**和**lstm_feature**，其中特征列为**lstm_feature**， 内容为每个timestamp的真实值与预测值之差的绝对值<br>
 
-**注意： 由于前time_step个数据无法做预测，因此返回的feature长度是小于原数据长度的**
+**注意： 由于前time_step个数据无法做预测，因此对返回的df前time_step行做了NaN补齐（即前time_step个lstm_feature用NaN补齐）**
+
+-----------------------------------------------------
+
+### Assignment IV. 对多条同类别（根据dtw分类）曲线的LSTM模型训练实验
+选取/data/train/variety/new_train_variety中的第一类（第一行）作为实验对象。由于计算能力有限，只选择前4条KPI用于实验，使用其中的3条KPI作为训练集训练LSTM模型，剩下的1条KPI作为验证集检验预测效果<br>
+实验详情：<br>
+   训练集：**8bef9af9a922e0b3， a40b1df87e3f1c87， affb01ca2b4f0b45** 验证集：**cff6d3c01e6a6bfa**<br>
+   训练集处理：简单地将3条曲线首尾相接组成1维的大向量，然后对该向量做归一化处理(array-mean) / std<br>
+   模型参数：与之前单条曲线相同（当前lstm_manual_trainer.py中的默认参数）<br>
+   训练轮数（epoch）：35<br>
+   容错阈值：10%<br>
+   准确率：91.6503%<br>
+额外实验：<br>
+   以下容错阈值皆为10%<br>
+   验证集: **9ee5879409dccef9**<br>
+   准确率: 97.62%<br>
+   验证集: **8c892e5525f3e491**<br>
+   准确率: 93.49%<br>
+   验证集: **1c35dbf57f55f5e4**<br>
+   准确率: 98.13%<br>
+   验证集: **e0770391decc44ce**<br>
+   准确率: 93.53%<br>
+   
+
+

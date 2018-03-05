@@ -18,14 +18,14 @@ class UseSTL(object):
         list = os.listdir(path)
         return list
 
-    def runSTL(self, path,id):
-         df = self.getDataframe(path,id)
+    def runSTL(self, df):
+         #df = self.getDataframe(path,id)
          res = self.stl(df, 11,np=1440)
          plot(res["trend"])
          show()
-
+         #res.reset_index()
          return res
-         # self.createFile("stl_middle/"+id,res,index=True)
+                # self.createFile("stl_middle/"+id,res,index=True)
 
     def getDataframe(self, path,id):
         df = pd.read_csv(path + id)
@@ -58,20 +58,20 @@ class UseSTL(object):
         """
         # make sure that data doesn't start or end with nan
 
-        df["timestamp"]=pd.to_datetime(df["timestamp"] * 1000000000)
+        df["timestamp"]=pd.to_datetime(df["timestamp"]*1000000000)
         #self.createFile("stl_result/ananomy.csv" , df[df["label"] == 1], index=False)
         idx = df["timestamp"]
         data = df["value"]
-        data.index = idx
+        #data.index = idx
         _data = data.copy()
 
         ts_ = robjects.r['ts']
         stl_ = robjects.r['stl']
 
-        if isinstance(data.index[0], int):
-            start = int(data.index[0])
+        if isinstance(idx[0], int):
+            start = int(idx[0])
         else:
-            start = robjects.IntVector([data.index[0].year, data.index[0].month])
+            start = robjects.IntVector([idx[0].year, idx[0].month])
 
         ts = ts_(robjects.FloatVector(asarray(data)), start=start, frequency=np)
 
@@ -79,12 +79,14 @@ class UseSTL(object):
 
         res_ts = asarray(result[0])
         try:
-            res_ts = pandas.DataFrame({"seasonal": pandas.Series(res_ts[:, 0],
-                                                                 index=data.index),
-                                       "trend": pandas.Series(res_ts[:, 1],
-                                                              index=data.index),
-                                       "remainder": pandas.Series(res_ts[:, 2],
-                                                                  index=data.index)})
+            res_ts = pandas.DataFrame({"timestamp": pandas.Series(idx
+                                                                ),
+                                        "seasonal": pandas.Series(res_ts[:, 0]
+                                                                ),
+                                       "trend": pandas.Series(res_ts[:, 1]
+                                                             ),
+                                       "remainder": pandas.Series(res_ts[:, 2]
+                                                                  )})
         except:
             return res_ts, data
 
