@@ -2,60 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="26f384ba-0120-42c0-8af7-7fc960a1012f" name="默认的" comment="add train and test offline features (all files)">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/model/offline_features/test/ewma/02e99bd4f6cfb33f.csv" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/model/offline_features/test/ewma/046ec29ddf80d62e.csv" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/model/offline_features/test/ewma/07927a9a18fa19ae.csv" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/model/offline_features/test/ewma/09513ae3e75778a3.csv" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/model/offline_features/test/ewma/18fbb1d5a5dc099d.csv" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/model/offline_features/test/ewma/1c35dbf57f55f5e4.csv" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/model/offline_features/test/ewma/40e25005ff8992bd.csv" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/model/offline_features/test/ewma/54e8a140f6237526.csv" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/model/offline_features/test/ewma/71595dd7171f4540.csv" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/model/offline_features/test/ewma/769894baefea4e9e.csv" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/model/offline_features/test/ewma/76f4550c43334374.csv" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/model/offline_features/test/ewma/7c189dd36f048a6c.csv" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/model/offline_features/test/ewma/88cf3a776ba00e7c.csv" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/model/offline_features/test/ewma/8a20c229e9860d0c.csv" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/model/offline_features/test/ewma/8bef9af9a922e0b3.csv" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/model/offline_features/test/ewma/8c892e5525f3e491.csv" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/model/offline_features/test/ewma/9bd90500bfd11edb.csv" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/model/offline_features/test/ewma/9ee5879409dccef9.csv" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/model/offline_features/test/ewma/a40b1df87e3f1c87.csv" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/model/offline_features/test/ewma/a5bf5d65261d859a.csv" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/model/offline_features/test/ewma/affb01ca2b4f0b45.csv" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/model/offline_features/test/ewma/b3b2e6d1a791d63a.csv" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/model/offline_features/test/ewma/c58bfcbacb2822d1.csv" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/model/offline_features/test/ewma/cff6d3c01e6a6bfa.csv" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/model/offline_features/test/ewma/da403e4e3f87c9e0.csv" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/model/offline_features/test/ewma/e0770391decc44ce.csv" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/model/offline_features/test/ewma/e5e3cd1a03fee6bd.csv" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/model/offline_features/test/ma/02e99bd4f6cfb33f.csv" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/model/offline_features/test/ma/046ec29ddf80d62e.csv" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/model/offline_features/test/ma/07927a9a18fa19ae.csv" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/model/offline_features/test/ma/09513ae3e75778a3.csv" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/model/offline_features/test/ma/18fbb1d5a5dc099d.csv" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/model/offline_features/test/ma/1c35dbf57f55f5e4.csv" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/model/offline_features/test/ma/40e25005ff8992bd.csv" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/model/offline_features/test/ma/54e8a140f6237526.csv" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/model/offline_features/test/ma/71595dd7171f4540.csv" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/model/offline_features/test/ma/769894baefea4e9e.csv" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/model/offline_features/test/ma/76f4550c43334374.csv" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/model/offline_features/test/ma/7c189dd36f048a6c.csv" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/model/offline_features/test/ma/88cf3a776ba00e7c.csv" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/model/offline_features/test/ma/8a20c229e9860d0c.csv" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/model/offline_features/test/ma/8bef9af9a922e0b3.csv" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/model/offline_features/test/ma/8c892e5525f3e491.csv" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/model/offline_features/test/ma/9bd90500bfd11edb.csv" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/model/offline_features/test/ma/9ee5879409dccef9.csv" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/model/offline_features/test/ma/a40b1df87e3f1c87.csv" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/model/offline_features/test/ma/a5bf5d65261d859a.csv" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/model/offline_features/test/ma/affb01ca2b4f0b45.csv" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/model/offline_features/test/ma/b3b2e6d1a791d63a.csv" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/model/offline_features/test/ma/c58bfcbacb2822d1.csv" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/model/offline_features/test/ma/cff6d3c01e6a6bfa.csv" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/model/offline_features/test/ma/da403e4e3f87c9e0.csv" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/model/offline_features/test/ma/e0770391decc44ce.csv" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/model/offline_features/test/ma/e5e3cd1a03fee6bd.csv" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/model/offline_features/train/diff/02e99bd4f6cfb33f.csv" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/model/offline_features/train/diff/046ec29ddf80d62e.csv" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/model/offline_features/train/diff/07927a9a18fa19ae.csv" />
@@ -741,7 +687,13 @@
       <option name="project" value="LOCAL" />
       <updated>1520268101405</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="add train and test offline features (all files)">
+      <created>1520268151247</created>
+      <option name="number" value="00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1520268151247</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="ToolWindowManager">
