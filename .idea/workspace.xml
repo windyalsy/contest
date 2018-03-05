@@ -1,33 +1,172 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="26f384ba-0120-42c0-8af7-7fc960a1012f" name="默认的" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/users/zjz/model/__init__.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/users/zjz/model/diff.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/users/zjz/model/ewma.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/users/zjz/model/get_fretures.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/users/zjz/model/ma.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/users/zjz/model/offline_features/__init__.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/users/zjz/model/offline_features/diff/8bef9af9a922e0b3.csv" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/users/zjz/model/offline_features/ewma/8bef9af9a922e0b3.csv" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/users/zjz/model/offline_features/lstm/8bef9af9a922e0b3.csv" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/users/zjz/model/offline_features/ma/8bef9af9a922e0b3.csv" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/users/zjz/model/offline_features/stl/8bef9af9a922e0b3.csv" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/users/zjz/model/offline_get_features.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/users/zjz/model/offline_rf.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/users/zjz/model/rf.py" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/users/zjz/Team_model/EWMA.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/users/zjz/Team_model/__init__.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/users/zjz/Team_model/diff.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/users/zjz/Team_model/get_fretures.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/users/zjz/Team_model/ma.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/users/zjz/Team_model/rf.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/users/zjz/featureExtractor/featureExtractor" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/contest.iml" afterPath="$PROJECT_DIR$/.idea/contest.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
+    <list default="true" id="26f384ba-0120-42c0-8af7-7fc960a1012f" name="默认的" comment="add train and test offline features (all files)">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/model/offline_features/test/diff/02e99bd4f6cfb33f.csv" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/model/offline_features/test/diff/046ec29ddf80d62e.csv" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/model/offline_features/test/diff/07927a9a18fa19ae.csv" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/model/offline_features/test/diff/09513ae3e75778a3.csv" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/model/offline_features/test/diff/18fbb1d5a5dc099d.csv" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/model/offline_features/test/diff/1c35dbf57f55f5e4.csv" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/model/offline_features/test/diff/40e25005ff8992bd.csv" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/model/offline_features/test/diff/54e8a140f6237526.csv" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/model/offline_features/test/diff/71595dd7171f4540.csv" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/model/offline_features/test/diff/769894baefea4e9e.csv" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/model/offline_features/test/diff/76f4550c43334374.csv" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/model/offline_features/test/diff/7c189dd36f048a6c.csv" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/model/offline_features/test/diff/88cf3a776ba00e7c.csv" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/model/offline_features/test/diff/8a20c229e9860d0c.csv" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/model/offline_features/test/diff/8bef9af9a922e0b3.csv" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/model/offline_features/test/diff/8c892e5525f3e491.csv" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/model/offline_features/test/diff/9bd90500bfd11edb.csv" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/model/offline_features/test/diff/9ee5879409dccef9.csv" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/model/offline_features/test/diff/a40b1df87e3f1c87.csv" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/model/offline_features/test/diff/a5bf5d65261d859a.csv" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/model/offline_features/test/diff/affb01ca2b4f0b45.csv" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/model/offline_features/test/diff/b3b2e6d1a791d63a.csv" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/model/offline_features/test/diff/c58bfcbacb2822d1.csv" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/model/offline_features/test/diff/cff6d3c01e6a6bfa.csv" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/model/offline_features/test/diff/da403e4e3f87c9e0.csv" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/model/offline_features/test/diff/e0770391decc44ce.csv" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/model/offline_features/test/diff/e5e3cd1a03fee6bd.csv" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/model/offline_features/test/ewma/02e99bd4f6cfb33f.csv" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/model/offline_features/test/ewma/046ec29ddf80d62e.csv" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/model/offline_features/test/ewma/07927a9a18fa19ae.csv" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/model/offline_features/test/ewma/09513ae3e75778a3.csv" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/model/offline_features/test/ewma/18fbb1d5a5dc099d.csv" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/model/offline_features/test/ewma/1c35dbf57f55f5e4.csv" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/model/offline_features/test/ewma/40e25005ff8992bd.csv" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/model/offline_features/test/ewma/54e8a140f6237526.csv" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/model/offline_features/test/ewma/71595dd7171f4540.csv" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/model/offline_features/test/ewma/769894baefea4e9e.csv" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/model/offline_features/test/ewma/76f4550c43334374.csv" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/model/offline_features/test/ewma/7c189dd36f048a6c.csv" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/model/offline_features/test/ewma/88cf3a776ba00e7c.csv" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/model/offline_features/test/ewma/8a20c229e9860d0c.csv" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/model/offline_features/test/ewma/8bef9af9a922e0b3.csv" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/model/offline_features/test/ewma/8c892e5525f3e491.csv" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/model/offline_features/test/ewma/9bd90500bfd11edb.csv" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/model/offline_features/test/ewma/9ee5879409dccef9.csv" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/model/offline_features/test/ewma/a40b1df87e3f1c87.csv" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/model/offline_features/test/ewma/a5bf5d65261d859a.csv" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/model/offline_features/test/ewma/affb01ca2b4f0b45.csv" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/model/offline_features/test/ewma/b3b2e6d1a791d63a.csv" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/model/offline_features/test/ewma/c58bfcbacb2822d1.csv" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/model/offline_features/test/ewma/cff6d3c01e6a6bfa.csv" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/model/offline_features/test/ewma/da403e4e3f87c9e0.csv" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/model/offline_features/test/ewma/e0770391decc44ce.csv" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/model/offline_features/test/ewma/e5e3cd1a03fee6bd.csv" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/model/offline_features/test/ma/02e99bd4f6cfb33f.csv" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/model/offline_features/test/ma/046ec29ddf80d62e.csv" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/model/offline_features/test/ma/07927a9a18fa19ae.csv" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/model/offline_features/test/ma/09513ae3e75778a3.csv" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/model/offline_features/test/ma/18fbb1d5a5dc099d.csv" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/model/offline_features/test/ma/1c35dbf57f55f5e4.csv" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/model/offline_features/test/ma/40e25005ff8992bd.csv" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/model/offline_features/test/ma/54e8a140f6237526.csv" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/model/offline_features/test/ma/71595dd7171f4540.csv" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/model/offline_features/test/ma/769894baefea4e9e.csv" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/model/offline_features/test/ma/76f4550c43334374.csv" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/model/offline_features/test/ma/7c189dd36f048a6c.csv" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/model/offline_features/test/ma/88cf3a776ba00e7c.csv" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/model/offline_features/test/ma/8a20c229e9860d0c.csv" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/model/offline_features/test/ma/8bef9af9a922e0b3.csv" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/model/offline_features/test/ma/8c892e5525f3e491.csv" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/model/offline_features/test/ma/9bd90500bfd11edb.csv" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/model/offline_features/test/ma/9ee5879409dccef9.csv" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/model/offline_features/test/ma/a40b1df87e3f1c87.csv" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/model/offline_features/test/ma/a5bf5d65261d859a.csv" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/model/offline_features/test/ma/affb01ca2b4f0b45.csv" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/model/offline_features/test/ma/b3b2e6d1a791d63a.csv" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/model/offline_features/test/ma/c58bfcbacb2822d1.csv" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/model/offline_features/test/ma/cff6d3c01e6a6bfa.csv" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/model/offline_features/test/ma/da403e4e3f87c9e0.csv" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/model/offline_features/test/ma/e0770391decc44ce.csv" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/model/offline_features/test/ma/e5e3cd1a03fee6bd.csv" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/model/offline_features/train/diff/02e99bd4f6cfb33f.csv" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/model/offline_features/train/diff/046ec29ddf80d62e.csv" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/model/offline_features/train/diff/07927a9a18fa19ae.csv" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/model/offline_features/train/diff/09513ae3e75778a3.csv" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/model/offline_features/train/diff/18fbb1d5a5dc099d.csv" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/model/offline_features/train/diff/1c35dbf57f55f5e4.csv" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/model/offline_features/train/diff/40e25005ff8992bd.csv" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/model/offline_features/train/diff/54e8a140f6237526.csv" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/model/offline_features/train/diff/71595dd7171f4540.csv" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/model/offline_features/train/diff/769894baefea4e9e.csv" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/model/offline_features/train/diff/76f4550c43334374.csv" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/model/offline_features/train/diff/7c189dd36f048a6c.csv" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/model/offline_features/train/diff/88cf3a776ba00e7c.csv" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/model/offline_features/train/diff/8a20c229e9860d0c.csv" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/model/offline_features/train/diff/8bef9af9a922e0b3.csv" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/model/offline_features/train/diff/8c892e5525f3e491.csv" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/model/offline_features/train/diff/9bd90500bfd11edb.csv" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/model/offline_features/train/diff/9ee5879409dccef9.csv" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/model/offline_features/train/diff/a40b1df87e3f1c87.csv" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/model/offline_features/train/diff/a5bf5d65261d859a.csv" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/model/offline_features/train/diff/affb01ca2b4f0b45.csv" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/model/offline_features/train/diff/b3b2e6d1a791d63a.csv" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/model/offline_features/train/diff/c58bfcbacb2822d1.csv" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/model/offline_features/train/diff/cff6d3c01e6a6bfa.csv" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/model/offline_features/train/diff/da403e4e3f87c9e0.csv" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/model/offline_features/train/diff/e0770391decc44ce.csv" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/model/offline_features/train/diff/e5e3cd1a03fee6bd.csv" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/model/offline_features/train/ewma/02e99bd4f6cfb33f.csv" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/model/offline_features/train/ewma/046ec29ddf80d62e.csv" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/model/offline_features/train/ewma/07927a9a18fa19ae.csv" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/model/offline_features/train/ewma/09513ae3e75778a3.csv" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/model/offline_features/train/ewma/18fbb1d5a5dc099d.csv" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/model/offline_features/train/ewma/1c35dbf57f55f5e4.csv" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/model/offline_features/train/ewma/40e25005ff8992bd.csv" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/model/offline_features/train/ewma/54e8a140f6237526.csv" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/model/offline_features/train/ewma/71595dd7171f4540.csv" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/model/offline_features/train/ewma/769894baefea4e9e.csv" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/model/offline_features/train/ewma/76f4550c43334374.csv" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/model/offline_features/train/ewma/7c189dd36f048a6c.csv" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/model/offline_features/train/ewma/88cf3a776ba00e7c.csv" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/model/offline_features/train/ewma/8a20c229e9860d0c.csv" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/model/offline_features/train/ewma/8bef9af9a922e0b3.csv" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/model/offline_features/train/ewma/8c892e5525f3e491.csv" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/model/offline_features/train/ewma/9bd90500bfd11edb.csv" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/model/offline_features/train/ewma/9ee5879409dccef9.csv" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/model/offline_features/train/ewma/a40b1df87e3f1c87.csv" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/model/offline_features/train/ewma/a5bf5d65261d859a.csv" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/model/offline_features/train/ewma/affb01ca2b4f0b45.csv" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/model/offline_features/train/ewma/b3b2e6d1a791d63a.csv" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/model/offline_features/train/ewma/c58bfcbacb2822d1.csv" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/model/offline_features/train/ewma/cff6d3c01e6a6bfa.csv" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/model/offline_features/train/ewma/da403e4e3f87c9e0.csv" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/model/offline_features/train/ewma/e0770391decc44ce.csv" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/model/offline_features/train/ewma/e5e3cd1a03fee6bd.csv" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/model/offline_features/train/ma/02e99bd4f6cfb33f.csv" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/model/offline_features/train/ma/046ec29ddf80d62e.csv" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/model/offline_features/train/ma/07927a9a18fa19ae.csv" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/model/offline_features/train/ma/09513ae3e75778a3.csv" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/model/offline_features/train/ma/18fbb1d5a5dc099d.csv" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/model/offline_features/train/ma/1c35dbf57f55f5e4.csv" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/model/offline_features/train/ma/40e25005ff8992bd.csv" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/model/offline_features/train/ma/54e8a140f6237526.csv" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/model/offline_features/train/ma/71595dd7171f4540.csv" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/model/offline_features/train/ma/769894baefea4e9e.csv" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/model/offline_features/train/ma/76f4550c43334374.csv" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/model/offline_features/train/ma/7c189dd36f048a6c.csv" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/model/offline_features/train/ma/88cf3a776ba00e7c.csv" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/model/offline_features/train/ma/8a20c229e9860d0c.csv" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/model/offline_features/train/ma/8bef9af9a922e0b3.csv" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/model/offline_features/train/ma/8c892e5525f3e491.csv" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/model/offline_features/train/ma/9bd90500bfd11edb.csv" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/model/offline_features/train/ma/9ee5879409dccef9.csv" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/model/offline_features/train/ma/a40b1df87e3f1c87.csv" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/model/offline_features/train/ma/a5bf5d65261d859a.csv" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/model/offline_features/train/ma/affb01ca2b4f0b45.csv" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/model/offline_features/train/ma/b3b2e6d1a791d63a.csv" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/model/offline_features/train/ma/c58bfcbacb2822d1.csv" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/model/offline_features/train/ma/cff6d3c01e6a6bfa.csv" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/model/offline_features/train/ma/da403e4e3f87c9e0.csv" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/model/offline_features/train/ma/e0770391decc44ce.csv" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/model/offline_features/train/ma/e5e3cd1a03fee6bd.csv" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
+    <ignored path=".idea/dataSources.local.xml" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -39,11 +178,15 @@
   <component name="CoverageDataManager">
     <SUITE FILE_PATH="coverage/contest$picture.coverage" NAME="picture Coverage Results" MODIFIED="1513948175966" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/data" />
     <SUITE FILE_PATH="coverage/contest$countInterrval__2_.coverage" NAME="countInterrval (2) Coverage Results" MODIFIED="1514020073328" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/data/test" />
+    <SUITE FILE_PATH="coverage/contest$offline_get_features_train.coverage" NAME="offline_get_features_train Coverage Results" MODIFIED="1520266104286" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/users/zjz/model" />
     <SUITE FILE_PATH="coverage/contest$countInterrval.coverage" NAME="countInterrval Coverage Results" MODIFIED="1513946645916" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/data" />
     <SUITE FILE_PATH="coverage/contest$countInterrval__1_.coverage" NAME="countInterrval (1) Coverage Results" MODIFIED="1514020114928" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/data/train" />
     <SUITE FILE_PATH="coverage/contest$part.coverage" NAME="part Coverage Results" MODIFIED="1513943917478" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/data" />
+    <SUITE FILE_PATH="coverage/contest$offline_get_features_all.coverage" NAME="offline_get_features_all Coverage Results" MODIFIED="1520265951154" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/users/zjz/model" />
     <SUITE FILE_PATH="coverage/contest$part__1_.coverage" NAME="part (1) Coverage Results" MODIFIED="1514019977441" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/data/test" />
-    <SUITE FILE_PATH="coverage/contest$picture__1_.coverage" NAME="picture (1) Coverage Results" MODIFIED="1514020144598" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/data/test" />
+    <SUITE FILE_PATH="coverage/contest$offline_get_features_test.coverage" NAME="offline_get_features_test Coverage Results" MODIFIED="1520266066658" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/users/zjz/model" />
+    <SUITE FILE_PATH="coverage/contest$offline_rf.coverage" NAME="offline_rf Coverage Results" MODIFIED="1517068426827" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/users/zjz/model" />
+    <SUITE FILE_PATH="coverage/contest$picture__1_.coverage" NAME="picture (1) Coverage Results" MODIFIED="1517068421257" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/data/test" />
   </component>
   <component name="CreatePatchCommitExecutor">
     <option name="PATCH_PATH" value="" />
@@ -64,55 +207,87 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="picture.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/data/test/picture.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="countInterrval.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/data/test/countInterrval.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="use_case.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/users/hp/culiarity/use_case.py">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="5" column="52" selection-start-line="5" selection-start-column="12" selection-end-line="5" selection-end-column="52" />
-              <folding>
-                <element signature="e#0#37#0" expanded="true" />
-              </folding>
+              <caret line="5" column="52" selection-start-line="5" selection-start-column="52" selection-end-line="5" selection-end-column="52" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="test_na.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/users/hp/culiarity/test_na.py">
+      <file leaf-file-name="offline_get_features.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/users/zjz/model/offline_get_features.py">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="13" column="90" selection-start-line="13" selection-start-column="90" selection-end-line="13" selection-end-column="90" />
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="28" selection-end-column="20" />
               <folding>
-                <element signature="e#0#34#0" expanded="true" />
+                <element signature="e#0#19#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="stl_test.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/users/hp/culiarity/stl_test.py">
+      <file leaf-file-name="offline_get_features_train.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/users/zjz/model/offline_get_features_train.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.5146199">
-              <caret line="27" column="9" selection-start-line="27" selection-start-column="9" selection-end-line="27" selection-end-column="9" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="32" column="51" selection-start-line="32" selection-start-column="51" selection-end-line="32" selection-end-column="51" />
+              <folding>
+                <element signature="e#46#65#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="offline_get_features_test.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/users/zjz/model/offline_get_features_test.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="featureExtractor" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/users/zjz/zjz_featureExtractor/featureExtractor">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="225" column="46" selection-start-line="220" selection-start-column="4" selection-end-line="225" selection-end-column="46" />
+              <folding>
+                <element signature="e#0#19#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="offline_rf.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/users/zjz/model/offline_rf.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="offline_rf_category.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/users/zjz/model/offline_rf_category.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-0.029239766">
+              <caret line="54" column="30" selection-start-line="54" selection-start-column="30" selection-end-line="54" selection-end-column="30" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="rf.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/users/zjz/model/rf.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding>
                 <element signature="e#0#19#0" expanded="true" />
               </folding>
@@ -151,6 +326,11 @@
         <option value="$PROJECT_DIR$/users/hp/culiarity/use_case.py" />
         <option value="$PROJECT_DIR$/users/hp/culiarity/test_na.py" />
         <option value="$PROJECT_DIR$/users/hp/culiarity/stl_test.py" />
+        <option value="$PROJECT_DIR$/users/zjz/model/offline_get_features.py" />
+        <option value="$PROJECT_DIR$/users/zjz/model/rf/offline_get_features_all.py" />
+        <option value="$PROJECT_DIR$/users/zjz/model/offline_get_features_all.py" />
+        <option value="$PROJECT_DIR$/users/zjz/model/offline_get_features_train.py" />
+        <option value="$PROJECT_DIR$/users/zjz/model/offline_rf_category.py" />
       </list>
     </option>
   </component>
@@ -190,6 +370,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -218,67 +399,30 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="users" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="contest" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="contest" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="users" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="zjz" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="contest" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="contest" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="users" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="zjz" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="model" />
+              <option name="myItemId" value="data" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
       <pane id="Scope" />
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+    <property name="settings.editor.selected.configurable" value="vcs.Git" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="F:\2-workspace\pycharm\contest\users\zjz\model" />
       <recent name="C:\Users\Administrator\workspace\contest\data\train" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="F:\2-workspace\pycharm\contest\users\zjz\model" />
+      <recent name="F:\2-workspace\pycharm\contest\users\zjz\model\rf" />
+      <recent name="F:\2-workspace\pycharm\contest\model\offline_features" />
       <recent name="C:\Users\Administrator\workspace\contest\data\train\variety" />
       <recent name="C:\Users\Administrator\workspace\contest\data\test" />
     </key>
@@ -295,79 +439,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.picture (1)">
-    <configuration default="false" name="picture" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/data" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="contest" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="C:\Users\Administrator\workspace\contest\data\train\picture.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <method />
-    </configuration>
-    <configuration default="false" name="countInterrval (1)" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/data/train" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="contest" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/data/train/countInterrval.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <method />
-    </configuration>
-    <configuration default="false" name="part (1)" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/data/test" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="contest" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/data/test/part.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <method />
-    </configuration>
-    <configuration default="false" name="countInterrval (2)" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/data/test" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="contest" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/data/test/countInterrval.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <method />
-    </configuration>
+  <component name="RunManager" selected="Python.offline_get_features_train">
     <configuration default="false" name="picture (1)" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -382,6 +454,78 @@
       <module name="contest" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/data/test/picture.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="offline_rf" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/users/zjz/model" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="contest" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/users/zjz/model/offline_rf.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="offline_get_features_all" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/users/zjz/model" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="contest" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="F:\2-workspace\pycharm\contest\users\zjz\model\offline_get_features_train.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="offline_get_features_test" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/users/zjz/model" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="contest" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/users/zjz/model/offline_get_features_test.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="offline_get_features_train" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/users/zjz/model" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="contest" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/users/zjz/model/offline_get_features_train.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <method />
@@ -580,23 +724,26 @@
       <method />
     </configuration>
     <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="Python.picture" />
-      <item index="1" class="java.lang.String" itemvalue="Python.countInterrval (1)" />
-      <item index="2" class="java.lang.String" itemvalue="Python.part (1)" />
-      <item index="3" class="java.lang.String" itemvalue="Python.countInterrval (2)" />
-      <item index="4" class="java.lang.String" itemvalue="Python.picture (1)" />
+      <item index="0" class="java.lang.String" itemvalue="Python.picture (1)" />
+      <item index="1" class="java.lang.String" itemvalue="Python.offline_rf" />
+      <item index="2" class="java.lang.String" itemvalue="Python.offline_get_features_all" />
+      <item index="3" class="java.lang.String" itemvalue="Python.offline_get_features_test" />
+      <item index="4" class="java.lang.String" itemvalue="Python.offline_get_features_train" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Python.picture (1)" />
-        <item index="1" class="java.lang.String" itemvalue="Python.countInterrval (1)" />
-        <item index="2" class="java.lang.String" itemvalue="Python.countInterrval (2)" />
-        <item index="3" class="java.lang.String" itemvalue="Python.part (1)" />
-        <item index="4" class="java.lang.String" itemvalue="Python.picture" />
+        <item index="0" class="java.lang.String" itemvalue="Python.offline_get_features_train" />
+        <item index="1" class="java.lang.String" itemvalue="Python.offline_get_features_test" />
+        <item index="2" class="java.lang.String" itemvalue="Python.offline_get_features_all" />
+        <item index="3" class="java.lang.String" itemvalue="Python.offline_rf" />
+        <item index="4" class="java.lang.String" itemvalue="Python.picture (1)" />
       </list>
     </recent_temporary>
   </component>
   <component name="ShelveChangesManager" show_recycled="false" />
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="26f384ba-0120-42c0-8af7-7fc960a1012f" name="默认的" comment="" />
@@ -604,33 +751,46 @@
       <option name="number" value="Default" />
       <updated>1513943352023</updated>
     </task>
+    <task id="LOCAL-00001" summary="默认的">
+      <created>1517068078875</created>
+      <option name="number" value="00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1517068078875</updated>
+    </task>
+    <task id="LOCAL-00002" summary="默认的">
+      <created>1517109782129</created>
+      <option name="number" value="00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1517109782129</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1924" height="1204" extended-state="0" />
     <editor active="false" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26935485" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.27258065" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3292683" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3292683" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3292683" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3292683" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3292683" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="调试" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="运行" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.37003404" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32876712" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
@@ -662,6 +822,11 @@
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="默认的" />
+    <MESSAGE value="add train and test offline features (all files)" />
+    <option name="LAST_COMMIT_MESSAGE" value="add train and test offline features (all files)" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -696,9 +861,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="5" column="52" selection-start-line="5" selection-start-column="12" selection-end-line="5" selection-end-column="52" />
-          <folding>
-            <element signature="e#0#37#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -707,7 +870,77 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="13" column="90" selection-start-line="13" selection-start-column="90" selection-end-line="13" selection-end-column="90" />
           <folding>
-            <element signature="e#0#34#0" expanded="true" />
+            <element signature="e#0#34#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/users/hp/culiarity/stl_test.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="29" column="36" selection-start-line="29" selection-start-column="36" selection-end-line="29" selection-end-column="36" />
+          <folding>
+            <element signature="e#0#19#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/users/zjz/model/offline_rf.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#19#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/model/offline_features/ewma/8bef9af9a922e0b3.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/test/part.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="31" column="23" selection-start-line="31" selection-start-column="23" selection-end-line="31" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/test/picture.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/test/countInterrval.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/users/hp/culiarity/use_case.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="5" column="52" selection-start-line="5" selection-start-column="12" selection-end-line="5" selection-end-column="52" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/users/hp/culiarity/test_na.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="13" column="90" selection-start-line="13" selection-start-column="90" selection-end-line="13" selection-end-column="90" />
+          <folding>
+            <element signature="e#0#34#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -717,7 +950,7 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#0#19#0" expanded="true" />
+            <element signature="e#0#19#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -851,33 +1084,103 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/users/hp/culiarity/use_case.py">
+    <entry file="file://$PROJECT_DIR$/users/hp/culiarity/test_na.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="5" column="52" selection-start-line="5" selection-start-column="12" selection-end-line="5" selection-end-column="52" />
+          <caret line="14" column="58" selection-start-line="14" selection-start-column="58" selection-end-line="14" selection-end-column="58" />
           <folding>
-            <element signature="e#0#37#0" expanded="true" />
+            <element signature="e#0#34#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/users/hp/culiarity/test_na.py">
+    <entry file="file://$PROJECT_DIR$/model/offline_features/ewma/8bef9af9a922e0b3.csv">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="13" column="90" selection-start-line="13" selection-start-column="90" selection-end-line="13" selection-end-column="90" />
-          <folding>
-            <element signature="e#0#34#0" expanded="true" />
-          </folding>
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/users/hp/culiarity/stl_test.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5146199">
-          <caret line="27" column="9" selection-start-line="27" selection-start-column="9" selection-end-line="27" selection-end-column="9" />
+        <state vertical-scroll-proportion="0.032163743">
+          <caret line="29" column="36" selection-start-line="29" selection-start-column="36" selection-end-line="29" selection-end-column="36" />
+          <folding>
+            <element signature="e#0#19#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/users/hp/culiarity/use_case.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="5" column="52" selection-start-line="5" selection-start-column="52" selection-end-line="5" selection-end-column="52" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/users/zjz/model/offline_get_features.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="28" selection-end-column="20" />
           <folding>
             <element signature="e#0#19#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/users/zjz/model/offline_get_features_train.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="32" column="51" selection-start-line="32" selection-start-column="51" selection-end-line="32" selection-end-column="51" />
+          <folding>
+            <element signature="e#46#65#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/users/zjz/model/offline_get_features_test.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/users/zjz/model/rf.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#19#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/users/zjz/model/offline_rf.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/users/zjz/zjz_featureExtractor/featureExtractor">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="225" column="46" selection-start-line="220" selection-start-column="4" selection-end-line="225" selection-end-column="46" />
+          <folding>
+            <element signature="e#0#19#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/users/zjz/model/offline_rf_category.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.029239766">
+          <caret line="54" column="30" selection-start-line="54" selection-start-column="30" selection-end-line="54" selection-end-column="30" />
+          <folding />
         </state>
       </provider>
     </entry>
