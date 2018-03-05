@@ -26,7 +26,8 @@ class Interval(object):
             interval=self.getInterval(df)
             sub=self.getSub(interval,df)
             omit= self.getOmit(sub)
-            self.createFile("omit/" + id,omit)
+            omit_path = os.path.abspath(os.path.join(os.getcwd(), "omit", id))
+            self.createFile(omit_path, omit)
 
             ids.append(id.split(".")[0])
             intervals.append(interval)
@@ -40,12 +41,13 @@ class Interval(object):
 
 
     def getInterval(self, df):
-        t1 = int(df[0:1])
-        t2 = int(df[1:2])
+        t1 = int(df.iloc[3])
+        t2 = int(df.iloc[4])
         return t2-t1
 
     def getDataframe(self, id):
-        df = pd.read_csv("parts/" + id)
+        read_path = os.path.join(os.getcwd(), "parts", id)
+        df = pd.read_csv(read_path)
         df1 = df["timestamp"]
         return df1
 
@@ -69,7 +71,10 @@ class Interval(object):
     def createResult(self, ids, intervals, omits,amounts,starts,ends):
         result=pd.DataFrame({"id":ids, "interrval":intervals, "omit": omits,"amount":amounts,"start":starts,"end":ends})
         columns = ['id', 'interrval', 'amount', 'omit','start','end']
-        self.createFile("result/result.csv",result,columns)
+        result_path = os.path.abspath(os.path.join(os.getcwd(), "result", "result.csv"))
+        if os.path.isfile(result_path):
+            os.remove(result_path)
+        self.createFile(result_path,result,columns)
 
     def getStartAndEnd(self,df):
         start=df.get(0)
@@ -85,5 +90,5 @@ class Interval(object):
 
 
 if __name__=='__main__':
-
-    interval=Interval("parts")
+    parts_path = os.path.abspath(os.path.join(os.getcwd(), "parts"))
+    interval=Interval(parts_path)
