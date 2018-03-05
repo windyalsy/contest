@@ -29,60 +29,6 @@
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/model/offline_features/train/diff/da403e4e3f87c9e0.csv" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/model/offline_features/train/diff/e0770391decc44ce.csv" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/model/offline_features/train/diff/e5e3cd1a03fee6bd.csv" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/model/offline_features/train/ewma/02e99bd4f6cfb33f.csv" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/model/offline_features/train/ewma/046ec29ddf80d62e.csv" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/model/offline_features/train/ewma/07927a9a18fa19ae.csv" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/model/offline_features/train/ewma/09513ae3e75778a3.csv" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/model/offline_features/train/ewma/18fbb1d5a5dc099d.csv" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/model/offline_features/train/ewma/1c35dbf57f55f5e4.csv" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/model/offline_features/train/ewma/40e25005ff8992bd.csv" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/model/offline_features/train/ewma/54e8a140f6237526.csv" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/model/offline_features/train/ewma/71595dd7171f4540.csv" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/model/offline_features/train/ewma/769894baefea4e9e.csv" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/model/offline_features/train/ewma/76f4550c43334374.csv" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/model/offline_features/train/ewma/7c189dd36f048a6c.csv" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/model/offline_features/train/ewma/88cf3a776ba00e7c.csv" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/model/offline_features/train/ewma/8a20c229e9860d0c.csv" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/model/offline_features/train/ewma/8bef9af9a922e0b3.csv" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/model/offline_features/train/ewma/8c892e5525f3e491.csv" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/model/offline_features/train/ewma/9bd90500bfd11edb.csv" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/model/offline_features/train/ewma/9ee5879409dccef9.csv" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/model/offline_features/train/ewma/a40b1df87e3f1c87.csv" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/model/offline_features/train/ewma/a5bf5d65261d859a.csv" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/model/offline_features/train/ewma/affb01ca2b4f0b45.csv" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/model/offline_features/train/ewma/b3b2e6d1a791d63a.csv" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/model/offline_features/train/ewma/c58bfcbacb2822d1.csv" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/model/offline_features/train/ewma/cff6d3c01e6a6bfa.csv" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/model/offline_features/train/ewma/da403e4e3f87c9e0.csv" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/model/offline_features/train/ewma/e0770391decc44ce.csv" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/model/offline_features/train/ewma/e5e3cd1a03fee6bd.csv" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/model/offline_features/train/ma/02e99bd4f6cfb33f.csv" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/model/offline_features/train/ma/046ec29ddf80d62e.csv" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/model/offline_features/train/ma/07927a9a18fa19ae.csv" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/model/offline_features/train/ma/09513ae3e75778a3.csv" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/model/offline_features/train/ma/18fbb1d5a5dc099d.csv" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/model/offline_features/train/ma/1c35dbf57f55f5e4.csv" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/model/offline_features/train/ma/40e25005ff8992bd.csv" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/model/offline_features/train/ma/54e8a140f6237526.csv" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/model/offline_features/train/ma/71595dd7171f4540.csv" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/model/offline_features/train/ma/769894baefea4e9e.csv" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/model/offline_features/train/ma/76f4550c43334374.csv" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/model/offline_features/train/ma/7c189dd36f048a6c.csv" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/model/offline_features/train/ma/88cf3a776ba00e7c.csv" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/model/offline_features/train/ma/8a20c229e9860d0c.csv" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/model/offline_features/train/ma/8bef9af9a922e0b3.csv" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/model/offline_features/train/ma/8c892e5525f3e491.csv" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/model/offline_features/train/ma/9bd90500bfd11edb.csv" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/model/offline_features/train/ma/9ee5879409dccef9.csv" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/model/offline_features/train/ma/a40b1df87e3f1c87.csv" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/model/offline_features/train/ma/a5bf5d65261d859a.csv" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/model/offline_features/train/ma/affb01ca2b4f0b45.csv" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/model/offline_features/train/ma/b3b2e6d1a791d63a.csv" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/model/offline_features/train/ma/c58bfcbacb2822d1.csv" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/model/offline_features/train/ma/cff6d3c01e6a6bfa.csv" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/model/offline_features/train/ma/da403e4e3f87c9e0.csv" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/model/offline_features/train/ma/e0770391decc44ce.csv" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/model/offline_features/train/ma/e5e3cd1a03fee6bd.csv" />
     </list>
     <ignored path=".idea/dataSources.local.xml" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -693,7 +639,13 @@
       <option name="project" value="LOCAL" />
       <updated>1520268151247</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="add train and test offline features (all files)">
+      <created>1520268204078</created>
+      <option name="number" value="00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1520268204078</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="ToolWindowManager">
