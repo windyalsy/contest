@@ -11,6 +11,7 @@ from users.hp.culiarity.stl_test import UseSTL
 class STL(object):
 
     def getResultDF(self,origindf):
+        serdf = origindf.copy(1)
         path = "../../../data/train/parts_without_omits/"
         namestr = str(origindf["KPI ID"][1])
         print(namestr)
@@ -32,7 +33,7 @@ class STL(object):
                 count += 1
             else:
                 continue
-        df["timestamp"] = origindf["timestamp"]
+        df["timestamp"] = serdf["timestamp"]
         # df.to_csv("stl_result/" + id, index=False)
 
         print(count)
