@@ -24,3 +24,9 @@
   F1score  :   0.975425 <br>
   AUC Score (Train): 0.999999  <br>
   可能过拟合了
+  
+---
+### Assignment 5
+1. get_offline_features系列中对infinite数据置零
+2. RF模型中，去除roc_auc度量，部分file计算结果不平衡。
+3. util.py 提供remove padding等tool
